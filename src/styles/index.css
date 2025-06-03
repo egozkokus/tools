@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary colors */
+  --color-primary-50: 235, 245, 255;
+  --color-primary-100: 209, 230, 255;
+  --color-primary-200: 160, 199, 255;
+  --color-primary-300: 111, 168, 255;
+  --color-primary-400: 61, 137, 255;
+  --color-primary-500: 0, 102, 204;
+  --color-primary-600: 0, 84, 168;
+  --color-primary-700: 0, 66, 133;
+  --color-primary-800: 0, 49, 99;
+  --color-primary-900: 0, 31, 64;
+  
+  /* Secondary colors */
+  --color-secondary-500: 94, 92, 230;
+  
+  /* Accent colors */
+  --color-accent-500: 255, 149, 0;
+  
+  /* Success/Warning/Error */
+  --color-success-500: 52, 199, 89;
+  --color-warning-500: 255, 204, 0;
+  --color-error-500: 255, 59, 48;
+  
+  /* Font family */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  
+  /* Animation speed */
+  --transition-speed-fast: 150ms;
+  --transition-speed-normal: 250ms;
+  --transition-speed-slow: 350ms;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    height: 100%;
+  }
+  
+  body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  #app {
+    height: 100%;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+  }
+  
+  h1 { @apply text-3xl md:text-4xl; }
+  h2 { @apply text-2xl md:text-3xl; }
+  h3 { @apply text-xl md:text-2xl; }
+  h4 { @apply text-lg md:text-xl; }
+  h5 { @apply text-base md:text-lg; }
+  h6 { @apply text-sm md:text-base; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:outline-none;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-gray-800 border border-gray-300 hover:bg-gray-100 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:outline-none;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden;
+  }
+}
